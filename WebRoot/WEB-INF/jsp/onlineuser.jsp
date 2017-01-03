@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'login.jsp' starting page</title>
+    <title>My JSP 'onlineuser.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -19,18 +19,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery.js"></script>
+	    <script type="text/javascript" src="${pageContext.request.contextPath}/js/echarts.js" ></script>
+    <script  type="text/javascript" src="${pageContext.request.contextPath}/js/china.js"></script>
 
   </head>
   
   <body>
-    <form action="${pageContext.request.contextPath}/tologin" method="post">
-    <div>
-    username:<input type="text" name="username"/>
+    <h1 id="warning"></h1>
+    <div id="EverProvinceOnlineUser" style="width: 1000px;height:600px;">
     </div>
-    <div>
-    password:<input type="password" name="password"/>
-    </div>
-    <input type="submit" value="登录"/>
-    </form>
-  </body>
+        <script type="text/javascript" src="${pageContext.request.contextPath }/js/onlineuser.js"></script>
+      
 </html>

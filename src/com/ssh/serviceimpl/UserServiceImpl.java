@@ -22,8 +22,13 @@ public void setUserDao(UserDao userDao) {
 	public User selectUser(User user) {
 		// TODO Auto-generated method stub
 		List<User> users=userDao.selectUser(user);
-		User userGet=users.get(0);
-		return userGet;
+		int index=users.size();
+		if(index!=0){
+		return users.get(0);
+		}
+		else{
+			return null;
+		}
 	}
 
 }

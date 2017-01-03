@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssh.dao.ProvinceDataDao">
+ <insert id="addProvincedata" parameterType="ProvinceData">
+ insert into provincedata (province,open_tough,open_soft,today_open_tough,
+ today_open_soft,invoke_tough,invoke_soft,today_invoke_tough,today_invoke_soft,
+ destroy_tough,destroy_soft,today_destroy_tough,today_destroy_soft,online_tough,
+ online_soft,online_invoke_tough,online_invoke_soft,today_up_tough,terminal_arrive_tough,
+ invoke_rate,watching_user_tough,watching_user_soft,date) 
+ values (#{province},#{open_tough},#{open_soft},#{today_open_tough},#{today_open_soft},#{invoke_tough},#{invoke_soft},#{today_invoke_tough},#{today_invoke_soft},#{destroy_tough},#{destroy_soft},#{today_destroy_tough},#{today_destroy_soft},#{online_tough},#{online_soft},#{online_invoke_tough},#{online_invoke_soft},#{today_up_tough},#{terminal_arrive_tough},#{invoke_rate},#{watching_user_tough},#{watching_user_soft},#{date})
+ </insert>
+ <select id="selectMaxDate" resultType="java.util.Date">
+ select max(date) from provincedata
+ </select>
+ <select id="selectByMaxDate" parameterType="java.util.Date" resultType="ProvinceData">
+ select province, online_tough,online_soft from provincedata where date=#{date} 
+ </select>
+ <select id="selectByDateCondition"  resultType="ProvinceData">
+ select invoke_tough,invoke_soft,date from provincedata where date between #{0}  and  #{1} and province=#{2};
+ </select>
+</mapper>

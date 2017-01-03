@@ -8,5 +8,6 @@
    </typeAliases>
    <mappers>
    <mapper resource="com/ssh/mapper/UserDao.xml"/>
+   <mapper resource="com/ssh/mapper/ProvinceDataDao.xml"/>
    </mappers>
 </configuration>
